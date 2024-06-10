@@ -1,5 +1,5 @@
 
-# React Real Estate Frontend
+# React Real iEstate Frontend [ Responsive ]
 
 Find Real Estate & Get Your Dream Place
 
