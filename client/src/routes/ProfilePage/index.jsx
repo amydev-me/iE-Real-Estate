@@ -1,26 +1,55 @@
+ import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 import Chat from "../../components/chat";
 import List from "../../components/list/List";
+import apiRequest from "../../lib/apiRequest";
 import "./index.scss";
 
+
 function ProfilePage(){
+    const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const { updateUser, currentUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleLogoutClick = async () => {
+        setIsLoading(true);
+        try{
+            const res = await apiRequest.post("/auth/logout"); 
+            updateUser(null);
+            navigate("/");
+        }
+        catch(error) {
+            setError(error.response.data.message);
+        }
+        finally {
+            setIsLoading(false);
+        }
+    }
+     
+
     return (
-        <div className="profilePage">
+        currentUser && <div className="profilePage">
             <div className="details">
                 <div className="wrapper">
                     <div className="title">
                         <h1>User Information</h1>
-                        <button>Update Profile</button>
+                        <Link to="/profile/update">
+                            <button onClick={() => navigate('/update-profile')}>Update Profile</button>
+                        </Link>
                     </div>
                     <div className="info">
                         <span>Avatar: 
                             <img
-                                src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                                src={currentUser.avatar || "./noavatar.jpg"}
                                 alt=""
                             />
                         </span>
-                        <span>Username: <b>John Doe</b></span>
-                        <span>Email: <b>john@gmail.com</b></span>
-
+                        <span>Username: <b>{ currentUser.username }</b></span>
+                        <span>Email: <b>{ currentUser.email }</b></span>
+                        <button onClick={handleLogoutClick} disabled={isLoading}>Logout</button>
                     </div>
                     <List />
                     <div className="title">
@@ -39,6 +68,7 @@ function ProfilePage(){
                 </div>
             </div>
         </div>
+        
     );
 }
 
