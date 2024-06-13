@@ -1,9 +1,8 @@
-import Slider from "../../components/slider/Slider";
-import "./singlePage.scss";
-import {   userData } from "../../lib/dummydata";
-import Map from "../../components/map/Map";
 import { useLoaderData } from "react-router-dom";
 import DOMPurify from "dompurify";
+import Slider from "../../components/slider/Slider";
+import Map from "../../components/map/Map";
+import "./singlePage.scss"; 
 
 function SinglePage() {
     const post = useLoaderData();
