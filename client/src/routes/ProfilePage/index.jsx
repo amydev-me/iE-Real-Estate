@@ -51,10 +51,12 @@ function ProfilePage(){
                         <span>Email: <b>{ currentUser.email }</b></span>
                         <button onClick={handleLogoutClick} disabled={isLoading}>Logout</button>
                     </div>
-                    <List />
+                    
                     <div className="title">
                         <h1>My List</h1>
-                        <button>Create New Post</button>
+                        <Link to="/post/add">
+                            <button>Create New Post</button>
+                        </Link>
                     </div>
                     <div className="title">
                         <h1>Saved List</h1>
