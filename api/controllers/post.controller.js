@@ -52,7 +52,7 @@ const addPost = async(req, res) => {
             }
         })
 
-        res.status(201).send({ message: "Successfully created post." });
+        res.status(201).send(createdPost);
     }catch(error) {
         res.status(500).json({ message: "Failed to add post."})
     }
