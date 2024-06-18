@@ -175,4 +175,29 @@ const profilePosts = async(req, res) => {
     }
 }
 
-export { getUsers, getUser, updateUser, deleteUser, savePost, profilePosts };
+const getNotificationNumber = async (req, res) => {
+    const tokenUserId = req.userId; 
+
+    try{
+        const number = await prisma.chat.count({
+            where: {
+                userIDs: {
+                    has: tokenUserId
+                },
+                NOT: {
+                    seenBy:{
+                        hasSome: [tokenUserId]
+                    }
+                }
+            }
+        });
+
+        res.status(200).json(number);
+    }
+    catch(error) {
+        res.status(500).json({ message: "Failed to get noti count."});
+
+    }
+}
+
+export { getUsers, getUser, updateUser, deleteUser, savePost, profilePosts, getNotificationNumber };
