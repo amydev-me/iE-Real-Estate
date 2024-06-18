@@ -1,7 +1,9 @@
 
 # React Real iEstate Frontend [ Responsive ]
-Tech: NodeJS, Prisma (ORM), ReactJs, SCSS, Socket.io, Vite.js, Full Stack Development, Docker, MongoDB
-Find Real Estate & Get Your Dream Place
+
+###Tech: NodeJS, Prisma (ORM), ReactJs, SCSS, Socket.io, Vite.js, Full Stack Development, Docker, MongoDB
+
+##Find Real Estate & Get Your Dream Place
 
 ![image](https://github.com/amydev-me/iEstate/assets/11514651/249e4cc5-c860-4827-be42-977cf9c87990)
 
