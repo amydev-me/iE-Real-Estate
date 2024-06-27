@@ -1,7 +1,7 @@
 
 # React Real iEstate [ Fullstack Development ]
 
-### Tech: NodeJS, Prisma (ORM), ReactJs, SCSS, Socket.io, Vite.js, Full Stack Development, Docker, MongoDB
+### Tech: NodeJS, Prisma (ORM), ReactJs, SCSS, Socket.io, Vite.js, Docker, MongoDB
 
 ## Find Real Estate & Get Your Dream Place
 
