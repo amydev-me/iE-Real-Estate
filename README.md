@@ -1,5 +1,5 @@
 
-# React Real iEstate Frontend [ Responsive ]
+# React Real iEstate [ Fullstack Development ]
 
 ### Tech: NodeJS, Prisma (ORM), ReactJs, SCSS, Socket.io, Vite.js, Full Stack Development, Docker, MongoDB
 
